@@ -9,11 +9,17 @@
 
   <ItemGroup>
     <None Remove="149071.png" />
+    <None Remove="237510.png" />
+    <None Remove="burger.png" />
+    <None Remove="HD-wallpaper-technology-telegram.jpg" />
     <None Remove="unnamed.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="149071.png" />
+    <Resource Include="237510.png" />
+    <Resource Include="burger.png" />
+    <Resource Include="HD-wallpaper-technology-telegram.jpg" />
     <Resource Include="unnamed.png" />
   </ItemGroup>
 
