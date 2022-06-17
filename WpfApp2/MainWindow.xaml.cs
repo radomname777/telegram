@@ -22,61 +22,52 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
+            Enter_Space();
+        }
+        private void Enter_Space()
+        {
+            Messagepanel.VerticalAlignment = VerticalAlignment.Bottom;
+            for (int i = 0; i < 33; i++)
+            {
+                Messagepanel.Children.Add(new Label());
+                num++;
+            }
         }
         int num = 1;
         private void del()
         {
             foreach (var item in Messagepanel.Children)
-            {
                 if (item is Label txt){Messagepanel.Children.Remove(txt); return; }
-            }
         }
         private void TextBox_PreviewKeyUp(object sender, KeyEventArgs e)
         {
             var textBox = sender as TextBox;
             //if (isokay) { Txt_box.Text = "";Txt_box.Text = textBox.Text; }; 
 
-            if (e.Key == Key.Enter&&isokay)
+            if (e.Key == Key.Enter&&isokay&&textBox.Text.Length!=0)
             {
-                if (num == 13){del();num--;}
+                if (num == 2){del();num--;}
                 Label label = new Label();
                 label.Content = textBox.Text;
                 label.Background = Brushes.Transparent;
                 label.HorizontalAlignment = HorizontalAlignment.Right;
-                label.VerticalAlignment = VerticalAlignment.Top;
+                label.VerticalAlignment = VerticalAlignment.Bottom;
                 Messagepanel.Children.Add(label);num++;
-                    Txt_box.Text = "";
-                isokay = false;
+                Txt_box.Text = "";
             }
-            else if(e.Key != Key.Enter) isokay = true;
-  
+            else if(!isokay) Txt_box.Text = "Write a message...";
+
         }
 
         private void Txt_box_MouseMove(object sender, MouseEventArgs e)
         {
+            isokay = true;
             Txt_box.Text = "";
         }
-
-        private void Txt_box_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("a");
-            Txt_box.Text = "";
-        }
-
-        private void Txt_box_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            if (Txt_box.Text.Length==0)
-            {
-                Txt_box.Text = "Write a message...";
-            }
-        }
-
         private void Grid_MouseMove(object sender, MouseEventArgs e)
         {
-            if (Txt_box.Text.Length == 0)
-            {
-                Txt_box.Text = "Write a message...";
-            }
+            if (Txt_box.Text.Length == 0)Txt_box.Text = "Write a message...";
+            isokay = false;
         }
     }
 }
