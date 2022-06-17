@@ -8,18 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="0b818b15802c5de0183983eb4e330949.gif" />
     <None Remove="149071.png" />
     <None Remove="237510.png" />
+    <None Remove="bluzka-zhen.jpg" />
     <None Remove="burger.png" />
     <None Remove="HD-wallpaper-technology-telegram.jpg" />
+    <None Remove="mic-web-icon-msidiqf-vector-143552018.png" />
     <None Remove="unnamed.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="0b818b15802c5de0183983eb4e330949.gif" />
     <Resource Include="149071.png" />
     <Resource Include="237510.png" />
+    <Resource Include="bluzka-zhen.jpg" />
     <Resource Include="burger.png" />
     <Resource Include="HD-wallpaper-technology-telegram.jpg" />
+    <Resource Include="mic-web-icon-msidiqf-vector-143552018.png" />
     <Resource Include="unnamed.png" />
   </ItemGroup>
 
