@@ -18,13 +18,13 @@
                 <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
             <Button HorizontalAlignment="Left" Width="40 " 
-                    Height="30" Margin="14,7,0,11">
+                    Height="30" Margin="14,10,0,8">
                 <Button.Background>
                     <ImageBrush ImageSource="/burger.png"/>
                 </Button.Background>
 
             </Button>
-            <TextBox PreviewKeyUp="Search_PreviewKeyUp"  Name="Search" Height="33" Margin="72,7,514,8" Grid.RowSpan="1" Background="#FFF1F1F1" Foreground="Gray" Text="Username" Grid.ColumnSpan="2" FontSize="15"></TextBox>
+            <TextBox PreviewKeyUp="Search_PreviewKeyUp"  Name="Search" Height="33" Margin="72,8,514,7" Grid.RowSpan="1" Background="#FFF1F1F1" Foreground="Gray" Text="Username" Grid.ColumnSpan="2" FontSize="15"></TextBox>
             <Grid Grid.Row="1" Grid.Column="1">
                 <Grid.Background>
                     <ImageBrush ImageSource="/HD-wallpaper-technology-telegram.jpg"/>
