@@ -18,7 +18,7 @@ namespace WpfApp2
 {
     public partial class MainWindow : Window
     {
-        public bool isokay { get; set; } = false;
+        public bool isokay2 { get; set; } = true;
         List<Grid> gr0 = new List<Grid> { };
         public MainWindow()
         {
@@ -35,30 +35,40 @@ namespace WpfApp2
         }
         private void TextBox_PreviewKeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter && isokay && Txt_box.Text.Length != 0)
+            if (e.Key == Key.Enter && Txt_box.Text.Length != 0)
             {
+                Txt_box.IsReadOnly = true;
                 var textBox = sender as TextBox;
-                if (num == 1) { del(); num--; }
                 Label label = new Label();
+                if (num == 1) { del(); num--; }
+                if (isokay2)
+                {
+                    Label label2 = new Label();
+                    label2.Content = DateTime.Now;
+                    label2.Background = Brushes.Yellow;
+                    label2.HorizontalAlignment = HorizontalAlignment.Center;
+                    label2.VerticalAlignment = VerticalAlignment.Bottom;
+                    Messagepanel.Children.Add(label2); num++;
+                    if (num == 1) { del(); num--; }
+                }
                 label.Content = textBox.Text;
                 label.Background = Brushes.White;
                 label.HorizontalAlignment = HorizontalAlignment.Right;
                 label.VerticalAlignment = VerticalAlignment.Bottom;
                 Messagepanel.Children.Add(label); num++;
                 Txt_box.Text = "";
+                isokay2 = false;
+                MessageBox.Show("SENT", DateTime.Now.ToString());
             }
-            else if (!isokay) Txt_box.Text = "Write a message...";
-
+           
         }
         private void Txt_box_MouseMove(object sender, MouseEventArgs e)
         {
-            isokay = true;
-            Txt_box.Text = "";
-        }
-        private void Grid_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (Txt_box.Text.Length == 0) Txt_box.Text = "Write a message...";
-            isokay = false;
+            if (sender is TextBox txt)
+            {
+                txt.IsReadOnly = false;
+                txt.Text = "";
+            }
         }
         private void AddFolder()
         {
@@ -119,6 +129,15 @@ namespace WpfApp2
                     }
                 }
 
+            }
+        }
+        private void Search_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var TB = sender as TextBox;
+            if (TB.Text.Length==0)
+            {
+                if (TB.Name == "Search") { TB.Text = "Username";beraber();}
+                else TB.Text = "Write a message...";
             }
         }
     }
