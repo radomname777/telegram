@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,17 +23,10 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
-            Enter_Space();
-        }
-        private void Enter_Space()
-        {
             Messagepanel.VerticalAlignment = VerticalAlignment.Bottom;
-            for (int i = 0; i < 33; i++)
-            {
-                Messagepanel.Children.Add(new Label());
-                num++;
-            }
+            num++;
         }
+
         int num = 1;
         private void del()
         {
@@ -41,15 +35,13 @@ namespace WpfApp2
         }
         private void TextBox_PreviewKeyUp(object sender, KeyEventArgs e)
         {
-            var textBox = sender as TextBox;
-            //if (isokay) { Txt_box.Text = "";Txt_box.Text = textBox.Text; }; 
-
-            if (e.Key == Key.Enter&&isokay&&textBox.Text.Length!=0)
+            if (e.Key == Key.Enter&&isokay&& Txt_box.Text.Length!=0)
             {
-                if (num == 2){del();num--;}
+                var textBox = sender as TextBox;
+                if (num == 1){del();num--;}
                 Label label = new Label();
                 label.Content = textBox.Text;
-                label.Background = Brushes.Transparent;
+                label.Background = Brushes.White;
                 label.HorizontalAlignment = HorizontalAlignment.Right;
                 label.VerticalAlignment = VerticalAlignment.Bottom;
                 Messagepanel.Children.Add(label);num++;
@@ -68,6 +60,21 @@ namespace WpfApp2
         {
             if (Txt_box.Text.Length == 0)Txt_box.Text = "Write a message...";
             isokay = false;
+        }
+
+        private void Search_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            //List<Grid> list = new List<Grid>();
+            Grid a = new Grid();
+            a = Usergrid;
+            Gogrid.Children.Remove(Usergrid);
+            MessageBox.Show("a");
+            //Thread.Sleep(1000);
+            //Gogrid.Children.Add(a);
+            //foreach (var item in Usergrid.Children)
+            //{
+            //    list.Add
+            //}
         }
     }
 }
