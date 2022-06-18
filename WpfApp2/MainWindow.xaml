@@ -18,14 +18,13 @@
                 <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
             <Button HorizontalAlignment="Left" Width="40 " 
-                    Height="30" Margin="14,10,0,10">
+                    Height="30" Margin="14,7,0,11">
                 <Button.Background>
                     <ImageBrush ImageSource="/burger.png"/>
                 </Button.Background>
 
             </Button>
-            <TextBox PreviewKeyUp="Search_PreviewKeyUp"  Name="Search" Height="33" Margin="72,7,514,8" Grid.RowSpan="1" Background="#FFF1F1F1" Foreground="Gray" Text="Username
-                       " Grid.ColumnSpan="2" FontSize="20"></TextBox>
+            <TextBox PreviewKeyUp="Search_PreviewKeyUp"  Name="Search" Height="33" Margin="72,7,514,8" Grid.RowSpan="1" Background="#FFF1F1F1" Foreground="Gray" Text="Username" Grid.ColumnSpan="2" FontSize="15"></TextBox>
             <Grid Grid.Row="1" Grid.Column="1">
                 <Grid.Background>
                     <ImageBrush ImageSource="/HD-wallpaper-technology-telegram.jpg"/>
@@ -78,30 +77,40 @@
                     <RowDefinition Height="31*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="3.4*"/>
+
+                    <ColumnDefinition Width="166*"/>
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png"/>
-                <Image Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png"/>
-                <Image Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png"/>
-                <Image Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png"/>
-                <Image Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png"/>
-                <Image Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png"/>
-                <Label Grid.Column="1" Grid.Row="1" FontSize="18" Background="#FF2685C1" Foreground="White"  >Eve simth</Label>
-                <Label Grid.Column="1" Grid.Row="1" FontSize="14" VerticalAlignment="Bottom" Foreground="White" >Remind me of a Chinese...</Label>
-                <Label Grid.Column="1" Grid.Row="2" FontSize="18"  >Alexandra Smithr</Label>
-                <Label Grid.Column="1" Grid.Row="2" FontSize="14" VerticalAlignment="Bottom" >This is amazing!</Label>
-                <Label Grid.Column="1" Grid.Row="3" FontSize="18"  >Mike Appleh</Label>
-                <Label Grid.Column="1" Grid.Row="3" FontSize="14" VerticalAlignment="Bottom" Foreground="#FF3EA8E2" >🙂sticker</Label>
-                <Label Grid.Column="1" Grid.Row="4" FontSize="18"  >Evening Club</Label>
-                <Label Grid.Column="1" Grid.Row="4" FontSize="14" VerticalAlignment="Bottom" Foreground="#FF2685C1" >Eve: Photo</Label>
-                <Label Grid.Column="1" Grid.Row="5" FontSize="18"  >Old Pirates</Label>
-                <Label Grid.Column="1" Grid.Row="5" FontSize="14" VerticalAlignment="Bottom" Foreground="#FF2685C1" >Max: Yo-ho-ho!</Label>
-                <Label Grid.Column="1" Grid.Row="6" FontSize="18"  >Max Bright</Label>
-                <Label Grid.Column="1" Grid.Row="6" FontSize="14" VerticalAlignment="Bottom" >How about some coffee?</Label>
+                <Grid Grid.Row="1" Background="BlueViolet" >
+                    <Image HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png" Margin="0,7,0,7"/>
+                    <Label HorizontalAlignment="Center"  FontSize="18" Foreground="White"  Tag="Name" Width="140" >Eve simth</Label>
+                    <Label HorizontalAlignment="Left" FontSize="14"  VerticalAlignment="Top" Foreground="White" Margin="46,32,0,0" Width="164" Height="32" >Remind me of a Chinese...</Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Image Grid.Row="2" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png" Margin="0,7,0,8"/>
+                    <Label HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="18" Grid.RowSpan="3" Tag="Name"  >Alexandra Smithr</Label>
+                    <Label HorizontalAlignment="Center" FontSize="14" VerticalAlignment="Top" Margin="0,36,0,0" Width="140" >This is amazing!</Label>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1" >
+                    <Image Grid.Row="3" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png" Margin="0,7,0,7"/>
+                    <Label HorizontalAlignment ="Center" FontSize="18" Tag="Name" Width="140"  >Mike Appleh</Label>
+                    <Label HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Bottom" Foreground="#FF3EA8E2" Margin="47,0,0,0" >🙂sticker</Label>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Image Grid.Row="4" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png" Margin="0,7,0,7"/>
+                    <Label HorizontalAlignment="Center" FontSize="18" Tag="Name" Margin="0,-1,0,28" Width="140"  >Evening Club</Label>
+                    <Label HorizontalAlignment="Center" FontSize="14" VerticalAlignment="Top" Foreground="#FF2685C1" Margin="0,35,0,0" Width="140" >Eve: Photo</Label>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="1">
+                    <Image  HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png" Margin="0,7,0,7"/>
+                    <Label FontSize="18" Tag="Name" Margin="50,0,95,0"  >Old Pirates</Label>
+                    <Label FontSize="14" VerticalAlignment="Bottom" Foreground="#FF2685C1" Margin="50,0,0,0" Grid.ColumnSpan="2" >Max: Yo-ho-ho!</Label>
+                </Grid>
+                <Grid Grid.Row="6">
 
-
-
+                    <Image  Grid.Row="6" HorizontalAlignment="Left" Width="50" Height="50" Source="/149071.png" Margin="0,7,0,7"/>
+                    <Label Grid.Row="6" FontSize="18" Tag="Name" Margin="50,0,0,29"  >Max Bright</Label>
+                    <Label FontSize="14" VerticalAlignment="Bottom" Margin="50,0,5,0" >How about some coffee?</Label>
+                </Grid>
             </Grid>
 
         </Grid>
